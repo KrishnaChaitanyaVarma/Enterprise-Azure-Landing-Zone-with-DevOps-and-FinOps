@@ -118,33 +118,41 @@ Application teams can provision workloads through dedicated Terraform pipelines 
 
 ## Management Group Hierarchy
 
-![Management Groups](docs/screenshots/Management Group Hierarchy.png)
+![Management Groups](docs/screenshots/Management%20Group%20Hierarchy.png)
 
-## Platform Deployment Pipeline
+## Dev Deployment Pipeline
 
-![Platform Pipeline](docs/screenshots/dev-pipeline-success.png)
+![Dev Deployment](docs/screenshots/Dev%20Deployment%20Pipeline.png)
+
+## Prod Deployment Pipeline
+
+![Prod Deployment](docs/screenshots/Prod%20Deployment%20Pipeline.png)
 
 ## Hub-Spoke Networking
 
-![Networking](docs/screenshots/hub-spoke-networking.png)
+![Networking](docs/screenshots/Hub-Spoke%20Networking.png)
 
 ## FinOps Dashboard
 
-![FinOps](docs/screenshots/finops-dashboard.png)
+![FinOps](docs/screenshots/FinOps%20Dashboard.png)
 
 ## AI FinOps Advisor
 
-![AI Pipeline](docs/screenshots/ai-finops-pipeline.png)
+### AI FinOps Pipeline
 
-![AI Output](docs/screenshots/ai-finops-output.png)
+![AI Pipeline](docs/screenshots/AI%20FinOps%20Pipeline.png)
+
+### AI FinOps Advisor Output
+
+![AI Output](docs/screenshots/AI%20FinOps%20Advisor%20Output.png)
 
 ## Application Deployment
 
-![Application Deployment](docs/screenshots/app-workload-pipeline.png)
+![Application Deployment](docs/screenshots/Application%20Deployment%20Pipeline.png)
 
-## eShop CI/CD
+## eShop Deployment
 
-![eShop](docs/screenshots/eshop-deployment.png)
+![eShop](docs/screenshots/eShop%20Deployment.png)
 
 ---
 
