@@ -118,7 +118,7 @@ Application teams can provision workloads through dedicated Terraform pipelines 
 
 ## Management Group Hierarchy
 
-![Management Groups](docs/screenshots/Management_Group_Hierarchy.png)
+![Management Groups](docs/screenshots/Management Group Hierarchy.png)
 
 ## Platform Deployment Pipeline
 
