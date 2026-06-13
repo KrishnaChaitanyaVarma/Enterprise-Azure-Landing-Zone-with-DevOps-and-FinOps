@@ -118,7 +118,7 @@ Application teams can provision workloads through dedicated Terraform pipelines 
 
 ## Management Group Hierarchy
 
-![Management Groups](docs/screenshots/Management Group Hierarchy.png)
+![Management Groups](docs/screenshots/Management_Group_Hierarchy.png)
 
 ## Platform Deployment Pipeline
 
@@ -127,10 +127,6 @@ Application teams can provision workloads through dedicated Terraform pipelines 
 ## Hub-Spoke Networking
 
 ![Networking](docs/screenshots/hub-spoke-networking.png)
-
-## Monitoring
-
-![Monitoring](docs/screenshots/monitoring-resources.png)
 
 ## FinOps Dashboard
 
@@ -539,7 +535,6 @@ Recommended screenshots:
 * Dev Deployment Pipeline
 * Prod Deployment Pipeline
 * Hub-Spoke Networking
-* Azure Monitor & Log Analytics
 * FinOps Dashboard
 * AI FinOps Pipeline
 * AI FinOps Advisor Output
