@@ -1,0 +1,56 @@
+trigger:
+  enabled: false
+pool:
+  name: Default
+variables:
+- group: AI-FinOps
+stages:
+- stage: AIFinOps
+  displayName: 'AI FinOps Advisor'
+  jobs:
+  - job: AnalyzeCosts
+    displayName: 'Analyze Azure Costs'
+    steps:
+    - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+      inputs:
+        repository: self
+        clean: true
+    - task: CmdLine@2
+      displayName: 'Check Python Version'
+      inputs:
+        script: |
+          python --version
+    - task: CmdLine@2
+      displayName: 'Install Dependencies'
+      inputs:
+        script: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas openai openpyxl
+    - task: CmdLine@2
+      displayName: 'Verify Files'
+      inputs:
+        script: |
+          dir scripts
+          dir scripts\input
+    - task: CmdLine@2
+      displayName: 'Run AI FinOps Advisor'
+      env:
+        OPENAI_API_KEY: $(OPENAI_API_KEY)
+      inputs:
+        script: |
+          python scripts/ai-finops-advisor.py
+    - task: PowerShell@2
+      displayName: 'Display AI Report'
+      inputs:
+        targetType: inline
+        script: |
+          Write-Host ""
+          Write-Host "===== GENERATED REPORT ====="
+
+          if (Test-Path "scripts\output\ai-finops-report.txt") {
+            Get-Content "scripts\output\ai-finops-report.txt"
+          }
+          else {
+            Write-Error "AI report not found."
+          }
+

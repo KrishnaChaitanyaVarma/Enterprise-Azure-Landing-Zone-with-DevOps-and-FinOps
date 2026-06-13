@@ -1,0 +1,53 @@
+resources:
+  pipelines:
+  - pipeline: eshopci
+    source: eshopci
+    trigger:
+      enabled: true
+variables:
+- name: resource-group
+  value: 'EShop'
+- name: location
+  value: 'centralus'
+- name: templateFile
+  value: 'webapp.bicep'
+- name: subscriptionid
+  value: '9737865c-1a8a-4a66-bd3d-2d9021598609'
+- name: azureserviceconnection
+  value: 'azure-sp-terraform'
+- name: webappname
+  value: 'webapp-eshop9737865c'
+stages:
+- stage: Deploy
+  displayName: Deploy to WebApp
+  jobs:
+  - job: Deploy
+    pool:
+      name: Default
+    steps:
+    - task: 30f35852-3f7e-4c0c-9a88-e127b4f97211@1
+      inputs:
+        alias: eshopci
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: Deploy App Service Plan Bicep
+      inputs:
+        deploymentScope: 'Resource Group'
+        azureResourceManagerConnection: '$(azureserviceconnection)'
+        subscriptionId: '$(subscriptionid)'
+        action: 'Create Or Update Resource Group'
+        resourceGroupName: '$(resource-group)'
+        location: '$(location)'
+        templateLocation: 'Linked artifact'
+        csmFile: '$(Pipeline.Workspace)/eshopci/Bicep/$(templateFile)'
+        overrideParameters: '-webAppName $(webappname) -location $(location)'
+        deploymentMode: 'Incremental'
+        deploymentOutputs: 'asp-json'
+    - task: AzureRmWebAppDeployment@4
+      displayName: Publish Website to WebApp
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: '$(azureserviceconnection)'
+        appType: 'webApp'
+        WebAppName: '$(webappname)'
+        packageForLinux: '$(Pipeline.Workspace)/eshopci/Website/Web.zip'
+
