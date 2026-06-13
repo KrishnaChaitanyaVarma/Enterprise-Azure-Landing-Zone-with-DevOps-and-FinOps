@@ -20,7 +20,7 @@ Enterprise Azure Landing Zone implementing:
 * FinOps Controls
 * AI-Powered Cost Optimization using OpenAI
 * Self-Service Application Deployments
-* eShopOnWeb CI/CD Implementation
+* eShop CI/CD Implementation
 
 ---
 
