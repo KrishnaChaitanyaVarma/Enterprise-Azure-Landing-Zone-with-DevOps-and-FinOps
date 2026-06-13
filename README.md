@@ -114,6 +114,44 @@ Application teams can provision workloads through dedicated Terraform pipelines 
 
 ---
 
+# Project Walkthrough
+
+## Management Group Hierarchy
+
+![Management Groups](docs/screenshots/Management Group Hierarchy.png)
+
+## Platform Deployment Pipeline
+
+![Platform Pipeline](docs/screenshots/dev-pipeline-success.png)
+
+## Hub-Spoke Networking
+
+![Networking](docs/screenshots/hub-spoke-networking.png)
+
+## Monitoring
+
+![Monitoring](docs/screenshots/monitoring-resources.png)
+
+## FinOps Dashboard
+
+![FinOps](docs/screenshots/finops-dashboard.png)
+
+## AI FinOps Advisor
+
+![AI Pipeline](docs/screenshots/ai-finops-pipeline.png)
+
+![AI Output](docs/screenshots/ai-finops-output.png)
+
+## Application Deployment
+
+![Application Deployment](docs/screenshots/app-workload-pipeline.png)
+
+## eShop CI/CD
+
+![eShop](docs/screenshots/eshop-deployment.png)
+
+---
+
 ## Related Repositories
 
 This enterprise platform is implemented across multiple repositories.
